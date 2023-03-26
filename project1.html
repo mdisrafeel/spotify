@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- 1. Song name
+ 2. image  1.jpg 1.png 1.jfif
+ 3. description  -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" href="project1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        .songs {
+            width: 100%;
+            height: 400px;
+            background-color: rgb(144, 123, 4);
+            border-radius: 20px;
+            display: none;
+        }
+
+        .songs img {
+            width: 50%;
+            height: 100%;
+            object-fit: fill;
+            float: left;
+            border-radius: 20px 20px 20px 20px;
+        }
+
+        .songs-text {
+            width: 50%;
+            height: 100%;
+            float: left;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .songs-text h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .songs-text p {
+            font-size: 20px;
+            margin-bottom: 20px;
+
+        }
+
+        .text-h {
+            width: 100%;
+            height: 24%;
+        }
+
+        .text-img {
+            width: 100%;
+            height: 70%;
+        }
+
+        .text-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .button-tag {
+
+            padding-left: 10px;
+        }
+
+        .button-tag button {
+            border-radius: 10px;
+            padding: 8px;
+            color: rgb(14, 14, 14);
+        }
+
+        .box button {
+            position: absolute;
+            bottom: 12px;
+            left: 20px;
+            padding: 2px 15px;
+            background-color: red;
+            border-radius: 10px;
+            border: none;
+
+        }
+
+        .box button a {
+            text-decoration: none
+        }
+
+        #user-form {
+            position: absolute;
+            margin: auto;
+            z-index: 1;
+            left: 40%;
+            top: 100px;
+            color: white;
+            display: none;
+            background-color: rgb(20 52 12);
+            padding: 20px;
+            width: 30%;
+            height: 200px;
+            opacity: 0.9;
+            border-radius: 20px;
+        }
+
+        #user-form span {
+            color: red;
+
+        }
+
+        .butt button {
+            padding: 10px 20px;
+            margin: auto;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0px 0px 30px gold;
+            background-color: gold;
+        }
+
+        tr td {
+            padding-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        #username,#songname,#song-description {
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0px 0px 30px rgb(241, 206, 206);
+        }
+
+        #user-form i {
+            position: relative;
+            float: right;
+            font-size: 30px;
+            color:red;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            // $(document).on('click', '.box .child img', function (e) {         // delegate
+            //     alert("Hello");
+            // });
+
+            $(document).on('click', '.box .child img', function (e) {         // delegate
+                // alert("Byee");
+                e.preventDefault();
+                //alert("Heello");
+                // $('.songs').find("img").attr("src","img/5.jfif");
+                // $('.songs .songs-text h2').text("Enjoy this songs");
+                // $('songs .songs-text p').text("Relax and indulage width beautiful paino piceces")
+
+                //let z = $(this).find('.text h2').text();
+                $('.songs').css('display', 'block');
+                let z = $(this).closest('.item').find('.text h2').text();
+                let p = $(this).closest('.item').find('.text p').text();
+                //console.log( $(this).closest('.item') );
+                $('.songs .songs-text p').text(p);
+                $('.songs .songs-text h2').text(z);
+                $('.songs .text-img img').attr("src", "img/mmm.png");
+
+                let imgName = $(this).closest('.item').find('.image').children('img').attr("src");
+                let altVal = $(this).closest('.item').find('.image').children('img').attr("alt");
+
+                //console.log(imgVales);
+                $('.songs').children("img").attr("src", imgName);
+
+                // let b = $(this).find("img");
+                if (z == "Naiyo lagta (salman khan)") {
+                    // $('.songs').children("img").attr("src","img/3.jfif");   
+                    //$('.songs .songs-text h2').text(z);
+                    //$('.songs .songs-text p').text("Relax and indulage width beautiful paino piceces");
+                    //$('.songs .text-img img').attr("src","img/mmm.png")
+                    //alert("hello");
+                }
+                else if (z == "Tere Naam") {
+                    // $('.songs').find("img").attr("src","img/5.jfif");
+                    //$('.songs .songs-text h2').text(z);
+                    //$('songs .songs-text p').text("Relax and indulage width beautiful paino piceces");
+                    //$('.songs .text-img img').attr("src","img/mmm.png")
+                }
+                else if (z == "Genius(Original motion)") {
+                    // $('.songs').find("img").attr("src","img/4.jfif");
+                    //$('.songs .songs-text h2').text(z);
+                    //$('songs .songs-text p').text("Relax and indulage width beautiful paino piceces"); //
+                    //$('.songs .text-img img').attr("src","img/mmm.png")
+                }
+                else if (z == "Hits Hindi Song ") {
+                    // $('.songs').find("img").attr("src","img/2.jfif");
+                    //$('.songs .songs-text h2').text(z);
+                    //$('songs .songs-text p').text("Enjoy this songs");
+                    //$('.songs .text-img img').attr("src","img/mmm.png")
+                }
+                else if (z == "Peacefule paino") {
+                    //  $('.songs').find("img").attr("src","img/1.jfif");
+                    //$('.songs .songs-text h2').text(z);
+                    //$('songs .songs-text p').text("Relax and indulage width beautiful paino piceces");  //
+                    //$('.songs .text-img img').attr("src","img/mmm.png")
+                }
+
+            })
+
+
+            // Add new song function 
+
+            // $('.button-tag button').on('click',function(){        
+            //     let div= $('<div>');
+            //     $('.all:first').append(div);  //$('.all').first().append(div);
+
+            //     div.addClass("box");
+
+            //     let innerBoxAnchor= $('<a>')
+            //         innerBoxAnchor.attr("href","#");    
+            //         let div2 =$('<div>');
+            //         div2.addClass("item")
+
+            //             let div3 =$('<div>');
+            //             div3.addClass("image")   
+
+            //                 let img =$('<img>')
+            //                 let imgaeLoction = prompt("Enter the Image Name")
+            //                 img.attr("src", "img/" + imgaeLoction);
+            //                 div3.append(img);
+
+            //                 let div5 = $('<div>');
+            //                 div5.addClass("child");
+            //                     let img2 =$('<img>');
+            //                     img2.attr("src","img/play.png");
+            //                     div5.append(img2);
+
+            //                 div3.append(div5);  
+
+            //             div2.append(div3);
+
+
+            //             let div4 =$('<div>');
+            //             div4.addClass("text")
+
+            //                 let h2=$('<h2>');
+            //                 let value = prompt("Enter the Songs name")
+            //                 h2.text(value);
+            //                 div4.prepend(h2);
+
+            //                 let para=$('<p>');
+            //                 let paraValue=prompt("Enter the Songs name")
+            //                 para.text(paraValue);
+            //                 div4.append(para);  
+
+            //             div2.append(div4);
+
+            //         innerBoxAnchor.append(div2)
+            //     div.prepend(innerBoxAnchor);
+
+            //     let buttonTag=$('<button>');
+            //     buttonTag.addClass(".box button");
+            //         let AtagInButton =$('<a>')
+            //         AtagInButton.attr("href","#")
+            //         AtagInButton.text("Delete")    
+            //         buttonTag.append(AtagInButton);        
+            //     div.append(buttonTag);  
+
+            // }) // ends of add new songs
+
+
+            // open the new song form
+            $('.button-tag button').on('click', function () {
+                $("#user-form").css("display", "block");
+            }) // ends of add new songs
+
+            // validing/checking image name
+            $("#user-form").on("keyup", "#username", function () {
+                let imgaeLoction = $('#username').val();
+                if ((imgaeLoction == "1.jfif") || (imgaeLoction == "2.jfif") || (imgaeLoction == "3.jfif")) {
+                    $('span').css("display", "none")
+                }
+                else {
+                    $('span').css('display', 'block')
+                    return;
+                }
+                img.attr("src", "img/" + imgaeLoction);
+                div3.append(img);
+            })
+
+            // add the new songs
+            $('.butt button').on('click', function () {
+
+                $("#user-form").css("display", "none");
+                let div = $('<div>');
+                $('.all:first').append(div);  //$('.all').first().append(div);
+
+                div.addClass("box");
+
+                let innerBoxAnchor = $('<a>')
+                innerBoxAnchor.attr("href", "#");
+                let div2 = $('<div>');
+                div2.addClass("item")
+
+                let div3 = $('<div>');
+                div3.addClass("image")
+
+                let img = $('<img>')
+                //             let imgaeLoction = prompt("Enter the Image Name")
+
+                let imgaeLoction = $('#username').val();
+                img.attr("src", "img/" + imgaeLoction);
+                div3.append(img);
+
+
+                let div5 = $('<div>');
+                div5.addClass("child");
+                let img2 = $('<img>');
+                img2.attr("src", "img/play.png");
+                div5.append(img2);
+
+                div3.append(div5);
+
+                div2.append(div3);
+
+
+                let div4 = $('<div>');
+                div4.addClass("text")
+
+                let h2 = $('<h2>');
+                //             let value = prompt("Enter the Songs name")
+                let value = $('#songname').val();
+                h2.text(value);
+                div4.prepend(h2);
+
+                let para = $('<p>');
+                //             let paraValue=prompt("Enter the Songs name")
+                let paraValue = $('#song-description').val();
+                para.text(paraValue);
+                div4.append(para);
+
+                div2.append(div4);
+
+                innerBoxAnchor.append(div2)
+                div.prepend(innerBoxAnchor);
+
+                let buttonTag = $('<button>');
+                buttonTag.addClass(".box button");
+                let AtagInButton = $('<a>')
+                AtagInButton.attr("href", "#")
+                AtagInButton.text("Delete")
+                buttonTag.append(AtagInButton);
+                div.append(buttonTag);
+
+
+            })
+
+
+            //remove tag Start
+            $(document).on('click', '.box button', function (d) {
+                d.preventDefault()
+
+                let confirm;
+                confirm = prompt("Dlete Box yes OR no?")
+                if (confirm == "yes") {
+                    alert("yes")
+                    // $(this).remove();
+                    $(this).closest(".box").remove();
+                }
+                else if (confirm == "no") {
+                    alert("No")
+                }
+
+
+            }) // remove tag end
+
+            //remove tag Start
+            $('#user-form a').on('click', function(){
+                $('#user-form').remove();
+                
+            })// remove tag end
+        })
+
+
+    </script>
+</head>
+
+<body>
+
+    <div class="left-container">
+
+        <div class="item1">
+            <ul class="same">
+                <a href="">
+                    <li>
+                        <h2> <i class="fa fa-spotify"></i> Spotify</h2>
+                    </li>
+                </a>
+            </ul>
+            <ul class="same">
+                <a href="">
+                    <li> <i class="fa fa-home"></i> Home </li>
+                </a>
+                <a href="">
+                    <li> <i class="fa fa-search"></i> Search </li>
+                </a>
+                <a href="">
+                    <li> <i class="fa fa-paperclip"></i> Your Library </li>
+                </a>
+            </ul>
+            <ul class="same">
+                <a href="">
+                    <li> <i class="fa fa-plus-square"></i> Create Playlist </li>
+                </a>
+                <a href="">
+                    <li> <i class="fa fa-heart"></i> Linked Songs </li>
+                </a>
+            </ul>
+        </div>
+        <div class="last">
+            <ul class="same">
+                <a href="">
+                    <li>Cokies </li>
+                </a>
+                <li> <button> <a href=""> <i class="fa fa-circle"></i> English </a> </button> </li>
+            </ul>
+        </div>
+    </div>
+    <div id="user-form">
+        <a href=""><i class="fa fa-close"></i></a>
+        <table border="2px" width="100%">
+            <tr>
+                <td><label for=""> Image Name : </label> </td>
+                <td> <input type="text" id="username"> </td>
+                <span style="display: none;">Please enter
+                    the Valid img</span> <br>
+            </tr>
+            <tr>
+                <td><label for=""> Song Name :</label></td>
+                <td><input type="text" id="songname"></td>
+            </tr>
+            <tr>
+                <td><label for=""> Song Description : </label></td>
+                <td><input type="text" id="song-description"></td>
+            </tr>
+            <tr class="butt">
+                <td><button> Add New songs </button></td>
+            </tr>
+
+        </table>
+
+    </div>
+    <div class="output"></div>
+
+    <div class="right-container">
+        <!-- Header -->
+        <div class="head">
+            <div class="left-head">
+                <ul class="common">
+                    <li> <a href=""> <i class="fa fa-angle-left"></i> </a> </li>
+                    <li> <a href=""> <i class="fa fa-angle-right"></i> </a> </li>
+                </ul>
+            </div>
+            <div class="right-head">
+                <ul class="common">
+                    <li><a href=""> Sign up </a> </li>
+                    <li> <button> <a href=""> Log in </a> </button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- all  -->
+        <div class="all">
+
+
+            <div class="songs">
+                <img src="img/2.jfif" alt="">
+                <div class="songs-text">
+                    <div class="text-h">
+                        <h2>Naiyo lagta (salman khan)</h2>
+                        <p> Relax and indulage width beautiful paino piceces </p>
+                    </div>
+                    <div class="text-img">
+                        <img src="img/mmm.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="nav">
+                <div class="left-nav"> <a href="">
+                        <h2> Focus </h2>
+                    </a> </div>
+                <div class="right-nav"> <a href="">
+                        <p>Show all</p>
+                    </a> </div>
+            </div>
+
+            <div class="box">
+                <a href="#" target="">
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/3.jfif" alt="A">
+                            <div class="child">
+                                <img src="img/play.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h2>Naiyo lagta (salman khan)</h2>
+                            <p> Relax and indulage width beautiful paino piceces </p>
+                        </div>
+                    </div>
+
+                </a>
+                <button><a href="#">Delete</a></button>
+            </div>
+            <div class="box">
+                <a href="#" target="">
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/5.jfif" alt="B">
+                            <div class="child">
+                                <img src="img/play.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h2>Tere Naam</h2>
+                            <p> Indulage width beautiful paino piceces </p>
+                        </div>
+                    </div>
+                </a>
+                <button><a href="#">Delete</a></button>
+            </div>
+            <div class="box">
+                <a href="#" target="">
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/4.jfif" alt="C">
+                            <div class="child">
+                                <img src="img/play.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h2>Genius(Original motion)</h2>
+                            <p> 2017 </p>
+                        </div>
+                    </div>
+                </a>
+                <button><a href="#">Delete</a></button>
+            </div>
+            <div class="box">
+                <a href="#" target="">
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/2.jfif" alt="D">
+                            <div class="child">
+                                <img src="img/play.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h2>Hits Hindi Song </h2>
+                            <p>Hottest hindi music served here indulage width beautiful paino piceces </p>
+                        </div>
+                    </div>
+                </a>
+                <button><a href="#">Delete</a></button>
+            </div>
+
+            <div class="box">
+                <a href="#" target="">
+                    <div class="item ">
+                        <div class="image">
+                            <img src="img/1.jfif" alt="E">
+                            <div class="child">
+                                <img src="img/play.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h2>Peacefule paino</h2>
+                            <p> Relax and indulage width beautiful paino piceces </p>
+                        </div>
+                    </div>
+                </a>
+                <button><a href="#">Delete</a></button>
+            </div>
+            <div class="button-tag">
+                <button> Add New songs </button>
+            </div>
+
+        </div>
+
+
+        <div class="all second">
+            <div class="nav">
+                <div class="left-nav"> <a href="">
+                        <h2> Spotify Playlist </h2>
+                    </a> </div>
+                <div class="right-nav"> <a href="">
+                        <p>Show all</p>
+                    </a> </div>
+            </div>
+            <div class="box">
+                <a href="#">
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/4.jfif" alt="E">
+                            <div class="child">
+                                <img src="img/play.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h2>Genius(Original motion)</h2>
+                            <p> 2017 </p>
+                        </div>
+                    </div>
+                </a>
+                <button><a href="#">Delete</a></button>
+            </div>
+            <div class="box">
+                <a href="#">
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/2.jfif" alt="F">
+                            <div class="child">
+                                <img src="img/play.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h2>Hits Hindi Song</h2>
+                            <p>Hottest hindi music served here indulage width beautiful paino piceces </p>
+                        </div>
+                    </div>
+                </a>
+                <button><a href="#">Delete</a></button>
+            </div>
+
+            <div class="box">
+                <a href="#" target="">
+                    <div class="item ">
+                        <div class="image">
+                            <img src="img/1.jfif" alt="G">
+                            <div class="child">
+                                <img src="img/play.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h2>Peacefule paino</h2>
+                            <p> Relax and indulage width beautiful paino piceces </p>
+                        </div>
+                    </div>
+                </a>
+                <button><a href="#">Delete</a></button>
+            </div>
+            <div class="box">
+                <a href="#" target="">
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/3.jfif" alt="H">
+                            <div class="child">
+                                <img src="img/play.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h2>Naiyo lagta (salman khan)</h2>
+                            <p> Relax and indulage width beautiful paino piceces </p>
+                        </div>
+                    </div>
+                </a>
+                <button><a href="#">Delete</a></button>
+            </div>
+            <div class="box">
+                <a href="#" target="">
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/5.jfif" alt="I">
+                            <div class="child">
+                                <img src="img/play.png" alt="">
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h2>Tere Naam</h2>
+                            <p> Indulage width beautiful paino piceces </p>
+                        </div>
+                    </div>
+                </a>
+                <button><a href="#">Delete</a></button>
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- <div class="nav1">
+            <div class="left-nav1"> <a href=""> <h2> Spotify Playlist  </h2> </a> </div>
+            <div class="right-nav1"> <a href=""> <p>Show all</p> </a> </div>
+        </div>
+
+        
+        <div class="box">
+            <a href="">
+                <div class="item">
+                    <div class="image">
+                        <img src="img/3.jfif" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>Naiyo lagta (salman khan)</h2>
+                        <p> Relax and indulage width beautiful paino piceces </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="box">
+            <a href="">
+                <div class="item">
+                    <div class="image">
+                        <img src="img/3.jfif" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>Naiyo lagta (salman khan)</h2>
+                        <p> Relax and indulage width beautiful paino piceces </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="box">
+            <a href="">
+                <div class="item">
+                    <div class="image">
+                        <img src="img/3.jfif" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>Naiyo lagta (salman khan)</h2>
+                        <p> Relax and indulage width beautiful paino piceces </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="box">
+            <a href="">
+                <div class="item">
+                    <div class="image">
+                        <img src="img/3.jfif" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>Naiyo lagta (salman khan)</h2>
+                        <p> Relax and indulage width beautiful paino piceces </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="box">
+            <a href="">
+                <div class="item">
+                    <div class="image">
+                        <img src="img/3.jfif" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>Naiyo lagta (salman khan)</h2>
+                        <p> Relax and indulage width beautiful paino piceces </p>
+                    </div>
+                </div>
+            </a>
+        </div> -->
+
+
+
+    </div>
+
+</body>
+
+</html>
